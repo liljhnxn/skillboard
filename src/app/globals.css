@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #08080D;
+  --color-sec-bg: #10101A;
+  --color-card: #141421;
+  --color-purple: #A855F7;
+  --color-neon: #A3FF5F;
+  --color-border: #29293A;
+  --color-text: #F5F5F5;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08080D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #29293A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A855F7;
+}
+
+/* Subtle futuristic background grid */
+.cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(41, 41, 58, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 41, 58, 0.25) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Glassmorphism cards */
+.glass-panel {
+  background: rgba(20, 20, 33, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(41, 41, 58, 0.9);
+}
+
+.glass-panel:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.glass-panel-glow {
+  box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.2), 0 0 10px -5px rgba(163, 255, 95, 0.1);
+}
+
+/* Glowing text */
+.glow-text-purple {
+  text-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+}
+
+.glow-text-neon {
+  text-shadow: 0 0 12px rgba(163, 255, 95, 0.6);
+}
+
+/* Gradient accents */
+.gradient-purple-neon {
+  background: linear-gradient(135deg, #A855F7 0%, #A3FF5F 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #F5F5F5 30%, #A855F7 70%, #A3FF5F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
