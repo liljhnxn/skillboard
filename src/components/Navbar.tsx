@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
-import { botchainTestnet } from "@/config/chain";
+import { botchainMainnet } from "@/config/chain";
 import {
   Wallet,
   LogOut,
@@ -27,7 +27,7 @@ export function Navbar({ onOpenMyProfile, onNavigateExplore }: NavbarProps) {
   const { switchChain, isPending: isSwitching } = useSwitchChain();
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  const isWrongNetwork = isConnected && chain?.id !== botchainTestnet.id;
+  const isWrongNetwork = isConnected && chain?.id !== botchainMainnet.id;
 
   const truncateAddress = (addr: string) => {
     return `${addr.substring(0, 6)}...${addr.substring(addr.length - 4)}`;
@@ -58,7 +58,7 @@ export function Navbar({ onOpenMyProfile, onNavigateExplore }: NavbarProps) {
               <span className="font-extrabold text-xl tracking-tight text-neon glow-text-neon">Board</span>
             </div>
             <span className="text-[10px] uppercase font-mono tracking-wider text-text-subtle block -mt-0.5">
-              Botchain Testnet
+              Botchain Mainnet
             </span>
           </div>
         </div>
@@ -80,7 +80,7 @@ export function Navbar({ onOpenMyProfile, onNavigateExplore }: NavbarProps) {
             <span>My Profile</span>
           </button>
           <a
-            href="https://scan.bohr.life"
+            href="https://scan.botchain.ai"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-1 text-xs font-mono text-text-subtle hover:text-text transition-colors"
@@ -94,7 +94,7 @@ export function Navbar({ onOpenMyProfile, onNavigateExplore }: NavbarProps) {
         <div className="flex items-center space-x-3">
           {isConnected && isWrongNetwork && (
             <button
-              onClick={() => switchChain({ chainId: botchainTestnet.id })}
+              onClick={() => switchChain({ chainId: botchainMainnet.id })}
               disabled={isSwitching}
               className="flex items-center space-x-2 px-3 py-1.5 text-xs font-semibold rounded-lg bg-red-500/10 text-red-400 border border-red-500/30 hover:bg-red-500/20 transition-all animate-pulse"
             >
@@ -106,7 +106,7 @@ export function Navbar({ onOpenMyProfile, onNavigateExplore }: NavbarProps) {
           {isConnected && !isWrongNetwork && (
             <div className="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-card border border-border text-xs font-mono text-neon">
               <span className="w-2 h-2 rounded-full bg-neon animate-pulse" />
-              <span>Botchain Testnet (968)</span>
+              <span>Botchain Mainnet (677)</span>
             </div>
           )}
 
@@ -162,7 +162,7 @@ export function Navbar({ onOpenMyProfile, onNavigateExplore }: NavbarProps) {
                   </button>
 
                   <a
-                    href={`https://scan.bohr.life/address/${address}`}
+                    href={`https://scan.botchain.ai/address/${address}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm text-text-muted hover:text-text hover:bg-card transition-colors"

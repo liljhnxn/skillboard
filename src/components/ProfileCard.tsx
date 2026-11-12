@@ -108,10 +108,10 @@ export function ProfileCard({
                 {copied ? <Check className="w-3 h-3 text-neon" /> : <Copy className="w-3 h-3" />}
               </button>
               <a
-                href={`https://scan.bohr.life/address/${wallet}`}
+                href={`https://scan.botchain.ai/address/${wallet}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                title="View on BohrScan"
+                title="View on Botchain Explorer"
                 className="text-text-subtle hover:text-neon transition-colors"
               >
                 <ExternalLink className="w-3 h-3" />

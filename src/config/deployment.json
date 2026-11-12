@@ -1,8 +1,9 @@
 {
-  "address": "0x0C223f87a89Ea7264E54e1e03822BAa63Be27D5F",
-  "network": "Botchain Testnet",
-  "chainId": 968,
-  "deployedAt": "2026-11-04T10:10:25.000Z",
-  "explorer": "https://scan.bohr.life/address/0x0C223f87a89Ea7264E54e1e03822BAa63Be27D5F"
+  "address": "0x839Ea7614CD798f1Cf31e3397635CD7Ed0b3B4A1",
+  "network": "Botchain Mainnet",
+  "chainId": 677,
+  "deployedAt": "2026-11-12T07:59:31.215Z",
+  "explorer": "https://scan.botchain.ai/address/0x839Ea7614CD798f1Cf31e3397635CD7Ed0b3B4A1",
+  "gasUsed": "1703236",
+  "feeSpent": "0.03406472"
 }
-

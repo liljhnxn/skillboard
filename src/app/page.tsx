@@ -362,9 +362,9 @@ export default function SkillBoardPage() {
                 </span>
                 Contract address is currently unset. Run{" "}
                 <code className="bg-black/40 px-2 py-0.5 rounded text-neon font-mono">
-                  npm run deploy:botchain
+                  npm run deploy:mainnet
                 </code>{" "}
-                to deploy to Botchain Testnet, then update{" "}
+                to deploy to Botchain Mainnet, then update{" "}
                 <code className="bg-black/40 px-2 py-0.5 rounded text-neon font-mono">
                   NEXT_PUBLIC_SKILLBOARD_CONTRACT_ADDRESS
                 </code>

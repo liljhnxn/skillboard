@@ -2,14 +2,14 @@
 
 import React from "react";
 import { useAccount, useSwitchChain } from "wagmi";
-import { botchainTestnet } from "@/config/chain";
+import { botchainMainnet } from "@/config/chain";
 import { AlertTriangle, ArrowRight, Loader2 } from "lucide-react";
 
 export function NetworkBanner() {
   const { isConnected, chain } = useAccount();
   const { switchChain, isPending } = useSwitchChain();
 
-  if (!isConnected || chain?.id === botchainTestnet.id) {
+  if (!isConnected || chain?.id === botchainMainnet.id) {
     return null;
   }
 
@@ -20,13 +20,13 @@ export function NetworkBanner() {
           <AlertTriangle className="w-5 h-5 text-red-400 flex-shrink-0" />
           <p className="text-xs sm:text-sm">
             <span className="font-semibold text-red-400">Wrong Network:</span> You are connected to{" "}
-            <span className="font-mono font-medium">{chain?.name || "an unsupported network"}</span>. SkillBoard runs exclusively on{" "}
-            <span className="font-semibold text-neon font-mono">Botchain Testnet (Chain ID: 968)</span>.
+            <span className="font-mono font-medium">{chain?.name || "an unsupported network"}</span>. SkillBoard runs on{" "}
+            <span className="font-semibold text-neon font-mono">Botchain Mainnet (Chain ID: 677)</span>.
           </p>
         </div>
 
         <button
-          onClick={() => switchChain({ chainId: botchainTestnet.id })}
+          onClick={() => switchChain({ chainId: botchainMainnet.id })}
           disabled={isPending}
           className="px-4 py-1.5 rounded-lg text-xs font-bold bg-red-500 text-white hover:bg-red-600 transition-colors flex items-center space-x-1.5 flex-shrink-0"
         >
@@ -37,7 +37,7 @@ export function NetworkBanner() {
             </>
           ) : (
             <>
-              <span>Switch Network</span>
+              <span>Switch to Mainnet</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </>
           )}
@@ -46,4 +46,3 @@ export function NetworkBanner() {
     </div>
   );
 }
-

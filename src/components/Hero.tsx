@@ -30,7 +30,7 @@ export function Hero({
             <span className="relative inline-flex rounded-full h-2 w-2 bg-neon" />
           </span>
           <span className="text-xs font-mono text-text-muted">
-            Live on <span className="text-neon font-semibold">Botchain Testnet</span> (Chain ID: 968)
+            Live on <span className="text-neon font-semibold">Botchain Mainnet</span> (Chain ID: 677)
           </span>
           <span className="text-text-subtle text-xs">|</span>
           <span className="text-xs font-mono text-purple font-medium">100% On-Chain</span>

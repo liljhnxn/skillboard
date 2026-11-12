@@ -33,10 +33,10 @@ export function Footer() {
               Network Details
             </h4>
             <div className="space-y-1 text-text-muted font-mono">
-              <p>Chain: <span className="text-text">Botchain Testnet</span></p>
-              <p>Chain ID: <span className="text-neon">968</span></p>
-              <p>Currency: <span className="text-text">Bohr (BOHR)</span></p>
-              <p>RPC: <span className="text-text">https://rpc.bohr.life</span></p>
+              <p>Chain: <span className="text-text">Botchain Mainnet</span></p>
+              <p>Chain ID: <span className="text-neon">677</span></p>
+              <p>Currency: <span className="text-text">Bot (BOT)</span></p>
+              <p>RPC: <span className="text-text">https://rpc.botchain.ai</span></p>
             </div>
           </div>
 
@@ -51,7 +51,7 @@ export function Footer() {
             <div className="pt-1">
               {isAddressConfigured ? (
                 <a
-                  href={`https://scan.bohr.life/address/${SKILLBOARD_ADDRESS}`}
+                  href={`https://scan.botchain.ai/address/${SKILLBOARD_ADDRESS}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-1.5 font-mono text-xs text-purple hover:text-neon transition-colors break-all"
@@ -73,12 +73,12 @@ export function Footer() {
           <p>© {new Date().getFullYear()} SkillBoard. All talent proofs verified on-chain.</p>
           <div className="flex items-center space-x-4">
             <a
-              href="https://scan.bohr.life"
+              href="https://scan.botchain.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-neon transition-colors flex items-center space-x-1"
             >
-              <span>BohrScan Explorer</span>
+              <span>Botchain Explorer</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>
@@ -87,4 +87,3 @@ export function Footer() {
     </footer>
   );
 }
-

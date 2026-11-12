@@ -1,8 +1,8 @@
 # SkillBoard: Decentralized On-Chain Talent Showcase & Peer Endorsement Protocol
 
 **Version:** 1.0  
-**Network:** Botchain Testnet (Chain ID: 968)  
-**Contract Address:** [`0x0C223f87a89Ea7264E54e1e03822BAa63Be27D5F`](https://scan.bohr.life/address/0x0C223f87a89Ea7264E54e1e03822BAa63Be27D5F#code)  
+**Network:** Botchain Mainnet (Chain ID: 677)  
+**Contract Address:** [`0x839Ea7614CD798f1Cf31e3397635CD7Ed0b3B4A1`](https://scan.botchain.ai/address/0x839Ea7614CD798f1Cf31e3397635CD7Ed0b3B4A1#code)  
 **Website:** [https://skillboard.vercel.app](https://skillboard.vercel.app) *(or local instance)*  
 **Source Code:** [https://github.com/liljhnxn/skillboard](https://github.com/liljhnxn/skillboard)  
 
@@ -156,3 +156,4 @@ flowchart LR
 SkillBoard provides the foundational building block for decentralized professional identity on Botchain. By combining gas-efficient smart contracts with an intuitive, responsive user experience, SkillBoard empowers developers to own their reputation permanently on-chain.
 
 *Built for the Botchain Ecosystem.*
+

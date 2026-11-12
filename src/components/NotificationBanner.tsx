@@ -70,12 +70,12 @@ export function NotificationBanner({
 
             {notification.txHash && (
               <a
-                href={`https://scan.bohr.life/tx/${notification.txHash}`}
+                href={`https://scan.botchain.ai/tx/${notification.txHash}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-1.5 text-xs text-neon hover:underline font-mono mt-2"
               >
-                <span>View on BohrScan</span>
+                <span>View on Botchain Explorer</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
             )}

@@ -174,7 +174,7 @@ export function MyProfileSection({
                             {copied ? <Check className="w-3.5 h-3.5 text-neon" /> : <Copy className="w-3.5 h-3.5" />}
                           </button>
                           <a
-                            href={`https://scan.bohr.life/address/${walletAddress}`}
+                            href={`https://scan.botchain.ai/address/${walletAddress}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-text-subtle hover:text-neon transition-colors"
