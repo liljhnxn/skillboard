@@ -5,7 +5,7 @@ import { Providers } from "./providers";
 export const metadata: Metadata = {
   title: "SkillBoard | On-Chain Talent Showcase & Skill Endorsements",
   description:
-    "Discover talented people, showcase your abilities, and build your reputation on-chain on Botchain Testnet.",
+    "Discover talented people, showcase your abilities, and build your reputation on-chain on BOT Chain.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",

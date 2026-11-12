@@ -6,19 +6,18 @@ import * as path from "path";
 async function main() {
   const network = await ethers.provider.getNetwork();
   const chainId = Number(network.chainId);
-  const isMainnet = chainId === 677;
 
   console.log("----------------------------------------------------");
-  console.log(`Deploying SkillBoard to ${isMainnet ? "Botchain Mainnet" : "Botchain Testnet"} (Chain ID: ${chainId})...`);
+  console.log(`Deploying SkillBoard to BOT Chain (Chain ID: ${chainId})...`);
 
   const [deployer] = await ethers.getSigners();
   console.log("Deployer address:", deployer.address);
   const balance = await ethers.provider.getBalance(deployer.address);
-  console.log("Deployer balance:", ethers.formatEther(balance), isMainnet ? "BOT" : "native tokens");
+  console.log("Deployer balance:", ethers.formatEther(balance), "BOT");
 
   // Fetch optimal gas price from network
   const feeData = await ethers.provider.getFeeData();
-  const gasPrice = feeData.gasPrice ?? 20000000000n; // fallback to 20 gwei if null
+  const gasPrice = feeData.gasPrice ?? 20000000000n; // fallback to 20 gwei
   console.log("Current network gas price:", ethers.formatUnits(gasPrice, "gwei"), "gwei");
 
   const SkillBoard = await ethers.getContractFactory("SkillBoard");
@@ -28,7 +27,7 @@ async function main() {
   const estimatedGas = await ethers.provider.estimateGas(deployTx);
   const estimatedCost = estimatedGas * gasPrice;
   console.log("Estimated deployment gas:", estimatedGas.toString());
-  console.log("Estimated deployment fee:", ethers.formatEther(estimatedCost), isMainnet ? "BOT" : "tokens");
+  console.log("Estimated deployment fee:", ethers.formatEther(estimatedCost), "BOT");
 
   // Deploy with minimal optimal gas price (avoiding overpayment)
   const skillBoard = await SkillBoard.deploy({
@@ -43,7 +42,7 @@ async function main() {
 
   console.log("SkillBoard deployed successfully to:", contractAddress);
   console.log("Actual gas used:", actualGasUsed.toString());
-  console.log("Actual fee spent:", ethers.formatEther(actualFee), isMainnet ? "BOT" : "tokens");
+  console.log("Actual fee spent:", ethers.formatEther(actualFee), "BOT");
   console.log("----------------------------------------------------");
 
   // Output deployment info to a config file for frontend integration
@@ -52,13 +51,12 @@ async function main() {
     fs.mkdirSync(deploymentDir, { recursive: true });
   }
 
-  const explorerBase = isMainnet ? "https://scan.botchain.ai" : "https://scan.bohr.life";
   const deploymentInfo = {
     address: contractAddress,
-    network: isMainnet ? "Botchain Mainnet" : "Botchain Testnet",
+    network: "BOT Chain",
     chainId: chainId,
     deployedAt: new Date().toISOString(),
-    explorer: `${explorerBase}/address/${contractAddress}`,
+    explorer: `https://scan.botchain.ai/address/${contractAddress}`,
     gasUsed: actualGasUsed.toString(),
     feeSpent: ethers.formatEther(actualFee),
   };

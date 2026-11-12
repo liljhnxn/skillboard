@@ -14,7 +14,11 @@ const PRIVATE_KEY = rawKey
     ? rawKey
     : `0x${rawKey}`
   : "0x0000000000000000000000000000000000000000000000000000000000000001";
-const BOTCHAIN_RPC_URL = process.env.BOTCHAIN_RPC_URL || process.env.NEXT_PUBLIC_BOTCHAIN_RPC_URL || "https://rpc.bohr.life";
+const BOTCHAIN_MAINNET_RPC_URL =
+  process.env.BOTCHAIN_MAINNET_RPC_URL ||
+  process.env.BOTCHAIN_RPC_URL ||
+  process.env.NEXT_PUBLIC_BOTCHAIN_RPC_URL ||
+  "https://rpc.botchain.ai";
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -33,13 +37,8 @@ const config: HardhatUserConfig = {
     localhost: {
       url: "http://127.0.0.1:8545",
     },
-    botchain: {
-      url: BOTCHAIN_RPC_URL,
-      chainId: 968,
-      accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
-    },
     mainnet: {
-      url: process.env.BOTCHAIN_MAINNET_RPC_URL || "https://rpc.botchain.ai",
+      url: BOTCHAIN_MAINNET_RPC_URL,
       chainId: 677,
       accounts: PRIVATE_KEY ? [PRIVATE_KEY] : [],
     },
@@ -52,18 +51,9 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: {
-      botchain: process.env.ETHERSCAN_API_KEY || "empty",
       mainnet: process.env.ETHERSCAN_API_KEY || "empty",
     },
     customChains: [
-      {
-        network: "botchain",
-        chainId: 968,
-        urls: {
-          apiURL: "https://scan.bohr.life/api",
-          browserURL: "https://scan.bohr.life",
-        },
-      },
       {
         network: "mainnet",
         chainId: 677,

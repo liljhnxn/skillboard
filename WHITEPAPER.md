@@ -47,12 +47,12 @@ SkillBoard introduces an immutable, decentralized standard for builder identity:
                                  | Wagmi v2 / Viem
                                  v
   +--------------------------------------------------------------+
-  |                   RPC: https://rpc.bohr.life                 |
+  |                   RPC: https://rpc.botchain.ai               |
   +------------------------------+-------------------------------+
                                  |
                                  v
   +--------------------------------------------------------------+
-  |                Botchain Testnet (Chain ID: 968)              |
+  |                   BOT Chain (Chain ID: 677)                  |
   |                                                              |
   |   +------------------------------------------------------+   |
   |   |                  SkillBoard.sol                      |   |
@@ -66,11 +66,11 @@ SkillBoard introduces an immutable, decentralized standard for builder identity:
 ```
 
 ### 3.1 Network Details
-- **Blockchain**: Botchain Testnet
-- **Chain ID**: 968
-- **Native Token**: Bohr (BOHR)
-- **RPC Endpoint**: `https://rpc.bohr.life`
-- **Block Explorer**: [BohrScan](https://scan.bohr.life)
+- **Blockchain**: BOT Chain
+- **Chain ID**: 677
+- **Native Token**: Bot (BOT)
+- **RPC Endpoint**: `https://rpc.botchain.ai`
+- **Block Explorer**: [BOT Chain Explorer](https://scan.botchain.ai)
 
 ### 3.2 Smart Contract Engine (`SkillBoard.sol`)
 The contract is written in Solidity `^0.8.20` and compiled with EVM target `paris`:
@@ -118,13 +118,13 @@ flowchart LR
     Phase2 --> Phase3["Phase 3: Protocol Expansion"]
 
     subgraph Phase1
-    P1A["SkillBoard.sol on Botchain Testnet"]
+    P1A["SkillBoard.sol on BOT Chain"]
     P1B["Single-Page Web3 dApp"]
-    P1C["Contract Verification on BohrScan"]
+    P1C["Contract Verification on Botchain Explorer"]
     end
 
     subgraph Phase2
-    P2A["Botchain Ecosystem Directory Listing"]
+    P2A["BOT Chain Ecosystem Directory Listing"]
     P2B["Co-marketing & Community Onboarding"]
     P2C["Builder Search & Filter Enhancements"]
     end
@@ -140,13 +140,13 @@ flowchart LR
 
 ## 7. Pitch Deck Slide Summary
 
-1. **Slide 1: Title**: SkillBoard — Show Your Skills. Build Your Reputation on Botchain.
+1. **Slide 1: Title**: SkillBoard — Show Your Skills. Build Your Reputation on BOT Chain.
 2. **Slide 2: Problem**: Resumes are unverified; centralized endorsements are inflated; builder reputation is fragmented.
 3. **Slide 3: Solution**: Permanent, on-chain talent registry with tamper-proof peer endorsements.
 4. **Slide 4: Product**: Ultra-fast single-page dApp, 100% on-chain, glassmorphic cyberpunk interface.
-5. **Slide 5: Technology**: Next.js 14, Tailwind, Wagmi/Viem, Solidity 0.8.20 on Botchain Testnet.
-6. **Slide 6: Traction / Live Demo**: Deployed and verified on Botchain Testnet at `0x0C223f87a89Ea7264E54e1e03822BAa63Be27D5F`.
-7. **Slide 7: Why Botchain?**: High-throughput, developer-friendly ecosystem ideal for micro-interactions and peer attestations.
+5. **Slide 5: Technology**: Next.js 14, Tailwind, Wagmi/Viem, Solidity 0.8.20 on BOT Chain.
+6. **Slide 6: Traction / Live Demo**: Deployed and verified on BOT Chain at `0x839Ea7614CD798f1Cf31e3397635CD7Ed0b3B4A1`.
+7. **Slide 7: Why BOT Chain?**: High-throughput, developer-friendly ecosystem ideal for micro-interactions and peer attestations.
 8. **Slide 8: Roadmap**: Soulbound skill attestations, ecosystem SDK, builder bounty matching.
 
 ---

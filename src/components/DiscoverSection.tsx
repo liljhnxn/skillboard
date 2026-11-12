@@ -71,7 +71,7 @@ export function DiscoverSection({
               Discover On-Chain Builders
             </h2>
             <p className="text-sm text-text-muted mt-1 max-w-xl">
-              Browse verified talent on Botchain Testnet. Endorse your peers and validate Web3 credentials.
+              Browse verified talent on BOT Chain. Endorse your peers and validate Web3 credentials.
             </p>
           </div>
 

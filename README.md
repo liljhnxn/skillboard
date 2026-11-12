@@ -1,7 +1,7 @@
 # SkillBoard 🌐⚡
 
 > **Show Your Skills. Build Your Reputation.**  
-> A simple, elegant, on-chain talent showcase and skill endorsement dApp running exclusively on **Botchain Testnet**.
+> A simple, elegant, on-chain talent showcase and skill endorsement dApp running on **BOT Chain**.
 
 SkillBoard is built as an ultra-lightweight Web3 application consisting of **exactly ONE Solidity smart contract** and **ONE single-page application** without any backend, database, tokens, or unnecessary bloat. All profile and endorsement data lives permanently and publicly on the blockchain.
 
@@ -34,13 +34,15 @@ SkillBoard is built as an ultra-lightweight Web3 application consisting of **exa
 
 ---
 
-## 🌐 Blockchain Configuration (Botchain Testnet)
+## 🌐 Blockchain Configuration (BOT Chain)
 
-- **Network Name**: Botchain Testnet
-- **Chain ID**: `968`
-- **Native Currency**: Bohr (`BOHR`, 18 decimals)
-- **RPC Endpoint**: `https://rpc.bohr.life`
-- **Block Explorer**: [https://scan.bohr.life](https://scan.bohr.life)
+- **Network Name**: BOT Chain
+- **Chain ID**: `677`
+- **Native Currency**: BOT (`BOT`, 18 decimals)
+- **RPC Endpoint**: `https://rpc.botchain.ai`
+- **BOT Chain Website**: [https://botchain.ai](https://botchain.ai)
+- **BOT Chain Explorer**: [https://scan.botchain.ai](https://scan.botchain.ai)
+- **Verified Contract**: [`0x839Ea7614CD798f1Cf31e3397635CD7Ed0b3B4A1`](https://scan.botchain.ai/address/0x839Ea7614CD798f1Cf31e3397635CD7Ed0b3B4A1#code)
 
 ---
 
@@ -75,7 +77,7 @@ The entire protocol is powered by a single gas-optimized Solidity smart contract
 Clone this repository and install dependencies:
 
 ```bash
-npm install --legacy-peer-deps
+npm install
 ```
 
 ### 3. Environment Configuration
@@ -89,14 +91,15 @@ cp .env.example .env.local
 Set the following environment variables:
 
 ```env
-# Botchain Testnet Configuration
-BOTCHAIN_RPC_URL="https://rpc.bohr.life"
-NEXT_PUBLIC_BOTCHAIN_RPC_URL="https://rpc.bohr.life"
-NEXT_PUBLIC_BOTCHAIN_CHAIN_ID="968"
-NEXT_PUBLIC_BOTCHAIN_EXPLORER_URL="https://scan.bohr.life"
+# BOT Chain Configuration
+BOTCHAIN_RPC_URL="https://rpc.botchain.ai"
+BOTCHAIN_MAINNET_RPC_URL="https://rpc.botchain.ai"
+NEXT_PUBLIC_BOTCHAIN_RPC_URL="https://rpc.botchain.ai"
+NEXT_PUBLIC_BOTCHAIN_CHAIN_ID="677"
+NEXT_PUBLIC_BOTCHAIN_EXPLORER_URL="https://scan.botchain.ai"
 
 # Deployed Contract Address
-NEXT_PUBLIC_SKILLBOARD_CONTRACT_ADDRESS="0x..."
+NEXT_PUBLIC_SKILLBOARD_CONTRACT_ADDRESS="0x839Ea7614CD798f1Cf31e3397635CD7Ed0b3B4A1"
 
 # Deployer Private Key for Hardhat (NEVER share or commit!)
 PRIVATE_KEY="your_private_key_here"
@@ -112,54 +115,12 @@ Run the comprehensive unit test suite covering profile creation, duplicate preve
 npm run test
 ```
 
-Expected output:
-```
-  SkillBoard Smart Contract
-    Profile Creation & Management
-      ✓ should allow a user to create a profile
-      ✓ should reject empty username
-      ✓ should reject username exceeding max length
-      ✓ should prevent duplicate profile creation for same wallet
-      ✓ should allow a profile owner to update their profile
-      ✓ should reject updateProfile if profile does not exist
-      ✓ should revert getProfile for non-existent profile
-    Skill Management
-      ✓ should allow profile owner to add skills
-      ✓ should reject adding empty skill
-      ✓ should reject duplicate skills for the same profile
-      ✓ should enforce maximum of 10 skills per profile
-      ✓ should reject skill management for unregistered user
-      ✓ should allow profile owner to remove skills
-      ✓ should reject removing a non-existent skill
-    Endorsements
-      ✓ should allow another user to endorse a skill
-      ✓ should prevent self-endorsement
-      ✓ should prevent endorsing the same skill twice by the same wallet
-      ✓ should allow multiple different users to endorse the same skill
-      ✓ should revert endorsement if target profile does not have the skill
-    Profile Discovery & Views
-      ✓ should retrieve all profiles with getAllProfiles
-
-  20 passing
-```
-
 ---
 
-## 🚀 Deploying to Botchain Testnet
-
-1. Ensure your deployer wallet has BOHR testnet funds.
-2. Put the deployer's private key into `.env` as `PRIVATE_KEY`.
-3. Run the deployment script:
+## 🚀 Deploying to BOT Chain
 
 ```bash
-npm run deploy:botchain
-```
-
-The script will deploy `SkillBoard.sol` and output the contract address.
-
-Copy the outputted address and paste it into `.env.local`:
-```env
-NEXT_PUBLIC_SKILLBOARD_CONTRACT_ADDRESS="0xYourDeployedAddress"
+npm run deploy:mainnet
 ```
 
 ---
@@ -185,13 +146,20 @@ npm start
 
 ## 🔒 Security Best Practices
 
-- **Zero Backend / Zero Database**: All state is derived directly from the Botchain blockchain.
+- **Zero Backend / Zero Database**: All state is derived directly from the BOT Chain blockchain.
 - **Private Key Isolation**: The deployer's `PRIVATE_KEY` is strictly used by Hardhat during deployment and is NEVER exposed or referenced in frontend code.
-- **Network Guard**: The dApp automatically detects if the connected wallet is on a network other than Botchain Testnet (Chain ID 968) and provides a single-click network switch.
+- **Network Guard**: The dApp automatically detects if the connected wallet is on a network other than BOT Chain (Chain ID 677) and provides a single-click network switch.
+
+---
+
+## 🔗 Official Links
+
+- **BOT Chain Website**: [https://botchain.ai](https://botchain.ai)
+- **BOT Chain Explorer**: [https://scan.botchain.ai](https://scan.botchain.ai)
+- **SkillBoard Contract**: [`0x839Ea7614CD798f1Cf31e3397635CD7Ed0b3B4A1`](https://scan.botchain.ai/address/0x839Ea7614CD798f1Cf31e3397635CD7Ed0b3B4A1#code)
 
 ---
 
 ## 📄 License
 
 MIT
-

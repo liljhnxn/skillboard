@@ -196,7 +196,7 @@ export default function SkillBoardPage() {
       setNotification({
         type: "success",
         title: "Transaction Confirmed!",
-        message: "Your on-chain action was successfully confirmed on Botchain Testnet.",
+        message: "Your on-chain action was successfully confirmed on BOT Chain.",
         txHash,
       });
       setActionLoading(false);
@@ -233,7 +233,7 @@ export default function SkillBoardPage() {
         type: "error",
         title: "Contract Not Deployed",
         message:
-          "The SkillBoard contract address is not configured. Please deploy the contract to Botchain Testnet and set NEXT_PUBLIC_SKILLBOARD_CONTRACT_ADDRESS.",
+          "The SkillBoard contract address is not configured. Please deploy the contract to BOT Chain and set NEXT_PUBLIC_SKILLBOARD_CONTRACT_ADDRESS.",
       });
       return;
     }
